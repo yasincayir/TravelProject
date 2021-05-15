@@ -1,0 +1,22 @@
+﻿@using TravelProject.Models.Siniflar;
+@model List<Blog>
+<div class="con-bot">
+    @foreach (var k in Model)
+    {
+        <div class="left">
+            <div class="bot-left">
+                <img src="@k.BlogImage" alt="" style="width:276px;height:150px" />
+            </div>
+            <div class="left-text">
+                <h4>@k.Baslik</h4>
+                <span class="doller">@k.Tarih.ToString("dd.MM.yyyy")</span>
+                <p>@k.Aciklama.Substring(0,80)</p>
+                <p><a href="/Blog/BlogDetay/@k.ID"><span class="read">Devamını Oku... >></span></a></p>
+            </div>
+        </div>
+    }
+
+    @Html.Action("Partial2","Default")
+   
+    <div class="clear"></div>
+</div>

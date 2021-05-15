@@ -1,0 +1,27 @@
+﻿@model TravelProject.Models.Siniflar.Blog
+@{
+    ViewBag.Title = "BlogGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Blog Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("BlogGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(k => k.ID)
+    @Html.TextBoxFor(k => k.ID, new { @class = "form-control",@readOnly="readonly" })
+    <br />
+    @Html.LabelFor(k => k.Baslik)
+    @Html.TextBoxFor(k => k.Baslik, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.Tarih)
+    @Html.TextBoxFor(k => k.Tarih, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.BlogImage)
+    @Html.TextBoxFor(k => k.BlogImage, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.Aciklama)
+    @Html.TextAreaFor(k => k.Aciklama,15,1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Blog Güncelle</button>
+}
